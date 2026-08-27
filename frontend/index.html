@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SMRITI — Cognitive Companion</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div class="brand">
+                <div class="brand-icon">🧠</div>
+
+                <div>
+                    <h1>SMRITI</h1>
+                    <p>Remember. Engage. Connect.</p>
+                </div>
+            </div>
+
+            <button class="language-btn" onclick="toggleLanguage()">
+                🌐 English
+            </button>
+
+        </header>
+
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <div class="welcome-content">
+
+                <div class="greeting-icon">
+                    🙏
+                </div>
+
+                <p class="greeting">
+                    Namaste
+                </p>
+
+                <h2>
+                    Welcome to SMRITI
+                </h2>
+
+                <p class="subtitle">
+                    Your gentle AI companion for memory,
+                    cognitive activities and everyday wellbeing.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Mode Selection -->
+        <section class="modes">
+
+            <h3>
+                How would you like to continue?
+            </h3>
+
+
+            <button class="mode-card elder" onclick="openElderMode()">
+
+                <div class="mode-icon">
+                    👴
+                </div>
+
+                <div class="mode-text">
+                    <strong>Elder Mode</strong>
+
+                    <span>
+                        Simple activities, memory games
+                        and daily assistance
+                    </span>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </button>
+
+
+            <button class="mode-card caregiver" onclick="openCaregiverMode()">
+
+                <div class="mode-icon">
+                    👨‍👩‍👧
+                </div>
+
+                <div class="mode-text">
+                    <strong>Caregiver Mode</strong>
+
+                    <span>
+                        Monitor progress, reminders
+                        and AI insights
+                    </span>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </button>
+
+        </section>
+
+
+        <!-- Voice -->
+        <section class="voice-section">
+
+            <button
+                class="voice-button"
+                onclick="startVoice()"
+                aria-label="Start voice assistant">
+
+                <span class="mic">
+                    🎙️
+                </span>
+
+                <span>
+                    Talk to SMRITI
+                </span>
+
+            </button>
+
+            <p>
+                You can speak instead of typing.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <span>
+                SMRITI • AI Cognitive Companion
+            </span>
+
+            <span>
+                🔒 Privacy First
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — Help</title>
+
+    <link
+        rel="stylesheet"
+        href="/help.css"
+    >
+
+</head>
+
+<body>
+
+<main class="help-page">
+
+    <!-- HEADER -->
+
+    <header class="help-header">
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+        <div class="brand">
+            🧠 <strong>SMRITI</strong>
+        </div>
+
+        <button
+            type="button"
+            class="voice-button"
+            onclick="speakHelp()"
+            aria-label="Voice assistance"
+        >
+            🎙️
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            💬
+        </div>
+
+        <span class="hero-label">
+            SMRITI ASSISTANT
+        </span>
+
+        <h1>
+            How can I help you?
+        </h1>
+
+        <p>
+            Choose something below and SMRITI
+            will guide you.
+        </p>
+
+    </section>
+
+
+    <!-- QUICK HELP -->
+
+    <section class="help-section">
+
+        <div class="section-heading">
+
+            <h2>
+                Quick help
+            </h2>
+
+            <p>
+                Simple answers for your everyday needs.
+            </p>
+
+        </div>
+
+
+        <div class="help-grid">
+
+            <button
+                type="button"
+                class="help-card"
+                onclick="showHelpAnswer('today')"
+            >
+
+                <div class="help-card-icon">
+                    🌅
+                </div>
+
+                <div>
+                    <h3>
+                        What should I do today?
+                    </h3>
+
+                    <p>
+                        See your activities for today.
+                    </p>
+                </div>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="help-card"
+                onclick="showHelpAnswer('games')"
+            >
+
+                <div class="help-card-icon">
+                    🎮
+                </div>
+
+                <div>
+                    <h3>
+                        How do I play an activity?
+                    </h3>
+
+                    <p>
+                        Learn how the cognitive activities work.
+                    </p>
+                </div>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="help-card"
+                onclick="showHelpAnswer('reminders')"
+            >
+
+                <div class="help-card-icon">
+                    🔔
+                </div>
+
+                <div>
+                    <h3>
+                        Show my reminders
+                    </h3>
+
+                    <p>
+                        Open your reminders for today.
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="help-card"
+                onclick="showHelpAnswer('progress')"
+            >
+
+                <div class="help-card-icon">
+                    📈
+                </div>
+
+                <div>
+                    <h3>
+                        Show my progress
+                    </h3>
+
+                    <p>
+                        See how your activities are going.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANSWER -->
+
+    <section
+        id="answerCard"
+        class="answer-card hidden"
+    >
+
+        <div class="answer-icon">
+            ✨
+        </div>
+
+        <div class="answer-content">
+
+            <span>
+                SMRITI SAYS
+            </span>
+
+            <h2 id="answerTitle">
+                Hello!
+            </h2>
+
+            <p id="answerText">
+                How can I help you today?
+            </p>
+
+            <button
+                type="button"
+                id="answerAction"
+                class="primary-button"
+                onclick="performAnswerAction()"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT / SUPPORT -->
+
+    <section class="support-card">
+
+        <div class="support-icon">
+            ❤️
+        </div>
+
+        <div>
+
+            <h2>
+                Need more help?
+            </h2>
+
+            <p>
+                You can always ask a family member
+                or caregiver for help.
+            </p>
+
+            <button
+                type="button"
+                onclick="speakSupport()"
+            >
+                🎙️ Hear this message
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOME BUTTON -->
+
+    <button
+        type="button"
+        class="home-button"
+        onclick="goHome()"
+    >
+        🏠 Back to My Day
+    </button>
+
+</main>
+
+
+<script src="/help.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — My Progress</title>
+
+    <link
+        rel="stylesheet"
+        href="progress.css"
+    >
+
+</head>
+
+<body>
+
+<main class="progress-page">
+
+    <header class="progress-header">
+
+        <button
+            onclick="goHome()"
+            class="back-button"
+        >
+            ← Back
+        </button>
+
+        <div class="brand">
+            🧠 <strong>SMRITI</strong>
+        </div>
+
+        <div></div>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            📈
+        </div>
+
+        <span>
+            SMRITI AI
+        </span>
+
+        <h1>
+            My Progress
+        </h1>
+
+        <p>
+            See how your cognitive activities
+            are progressing over time.
+        </p>
+
+    </section>
+
+
+    <!-- SUMMARY -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <span>🎯</span>
+
+            <strong id="totalSessions">
+                0
+            </strong>
+
+            <small>
+                Activities completed
+            </small>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>🧠</span>
+
+            <strong id="averageScore">
+                0
+            </strong>
+
+            <small>
+                Average score
+            </small>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>✨</span>
+
+            <strong id="averageAccuracy">
+                0%
+            </strong>
+
+            <small>
+                Average accuracy
+            </small>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>🏆</span>
+
+            <strong id="bestScore">
+                0
+            </strong>
+
+            <small>
+                Best score
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI INSIGHT -->
+
+    <section class="ai-card">
+
+        <div class="ai-icon">
+            ✨
+        </div>
+
+        <div>
+
+            <span>
+                SMRITI AI INSIGHT
+            </span>
+
+            <h3 id="aiInsight">
+                Analyzing your progress...
+            </h3>
+
+            <p id="aiInsightText">
+                Keep completing activities
+                and SMRITI will learn your pattern.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECENT ACTIVITIES -->
+
+    <section class="history-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>
+                    Recent activities
+                </h2>
+
+                <p>
+                    Your latest cognitive sessions
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="activityList"
+            class="activity-list"
+        ></div>
+
+    </section>
+
+
+</main>
+
+<script src="progress.js"></script>
+
+</body>
+
+</html>

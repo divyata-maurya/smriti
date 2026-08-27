@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — My Daily Story</title>
+
+    <link
+        rel="stylesheet"
+        href="routine.css"
+    >
+
+</head>
+
+<body>
+
+<main class="routine-page">
+
+    <header class="routine-header">
+
+        <button
+            onclick="goBack()"
+            class="back-button"
+        >
+            ← Back
+        </button>
+
+        <div class="brand">
+            🧠 <strong>SMRITI</strong>
+        </div>
+
+        <button
+            onclick="speakInstructions()"
+            class="voice-button"
+        >
+            🎙️
+        </button>
+
+    </header>
+
+
+    <!-- INTRO -->
+
+    <section
+        id="introScreen"
+        class="intro"
+    >
+
+        <div class="icon">
+            🌸
+        </div>
+
+        <span class="ai-badge">
+            ✨ Personalized by SMRITI AI
+        </span>
+
+        <h1>
+            My Daily Story
+        </h1>
+
+        <p>
+            Put these familiar daily activities
+            in the order you usually do them.
+        </p>
+
+        <div class="example">
+            🌅 → 🪥 → ☕ → 🍽️
+        </div>
+
+        <button
+            onclick="startGame()"
+            class="start-button"
+        >
+            Start Activity →
+        </button>
+
+    </section>
+
+
+    <!-- GAME -->
+
+    <section
+        id="gameScreen"
+        class="game-screen hidden"
+    >
+
+        <div class="game-top">
+
+            <div>
+
+                <span>My Daily Story</span>
+
+                <h2>
+                    Arrange your morning
+                </h2>
+
+            </div>
+
+            <div class="timer-box">
+
+                <small>
+                    Time
+                </small>
+
+                <strong id="timer">
+                    00:00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="message"
+            class="message"
+        >
+            Choose the activity that comes first.
+        </div>
+
+
+        <div
+            id="routineGrid"
+            class="routine-grid"
+        ></div>
+
+
+        <div class="help">
+            💡 Think about what you normally do.
+        </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section
+        id="resultScreen"
+        class="result-screen hidden"
+    >
+
+        <div class="result-icon">
+            🌟
+        </div>
+
+        <span class="completed">
+            Activity completed
+        </span>
+
+        <h1>
+            Wonderful work!
+        </h1>
+
+        <p>
+            You completed your daily routine activity.
+        </p>
+
+
+        <div class="score-card">
+
+            <div>
+
+                <strong id="finalScore">
+                    0
+                </strong>
+
+                <span>
+                    Score
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="finalAccuracy">
+                    0%
+                </strong>
+
+                <span>
+                    Accuracy
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="finalTime">
+                    0s
+                </strong>
+
+                <span>
+                    Time
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-result">
+
+            <div>
+                ✨
+            </div>
+
+            <div>
+
+                <span>
+                    SMRITI AI
+                </span>
+
+                <h3 id="aiMessage">
+                    Analyzing your performance...
+                </h3>
+
+                <p id="aiRecommendation">
+                    Your next activity will be personalized.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            onclick="goHome()"
+            class="continue-button"
+        >
+            Continue to My Day →
+        </button>
+
+    </section>
+
+</main>
+
+<script src="routine.js"></script>
+
+</body>
+
+</html>

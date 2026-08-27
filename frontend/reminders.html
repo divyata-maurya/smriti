@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — Reminders</title>
+
+    <link
+        rel="stylesheet"
+        href="/reminders.css"
+    >
+
+</head>
+
+<body>
+
+<main class="reminders-page">
+
+    <!-- HEADER -->
+
+    <header class="reminders-header">
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+        <div class="brand">
+            🧠 <strong>SMRITI</strong>
+        </div>
+
+        <button
+            type="button"
+            class="voice-button"
+            onclick="speakReminders()"
+            aria-label="Read reminders aloud"
+        >
+            🎙️
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            🔔
+        </div>
+
+        <span class="hero-label">
+            SMRITI CARE
+        </span>
+
+        <h1>
+            Today's Reminders
+        </h1>
+
+        <p>
+            Gentle reminders to help you
+            stay comfortable and organized.
+        </p>
+
+    </section>
+
+
+    <!-- REMINDER LIST -->
+
+    <section class="reminders-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>
+                    Your day
+                </h2>
+
+                <p>
+                    Things you don't want to forget.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="add-button"
+                onclick="showAddReminder()"
+            >
+                + Add reminder
+            </button>
+
+        </div>
+
+
+        <div
+            id="reminderList"
+            class="reminder-list"
+        ></div>
+
+    </section>
+
+
+    <!-- ADD REMINDER -->
+
+    <section
+        id="addReminderSection"
+        class="add-reminder-card hidden"
+    >
+
+        <div class="card-title">
+
+            <div>
+                <h2>
+                    Add a reminder
+                </h2>
+
+                <p>
+                    Create a gentle reminder for your day.
+                </p>
+            </div>
+
+            <span>
+                🌸
+            </span>
+
+        </div>
+
+
+        <form
+            id="reminderForm"
+            onsubmit="saveReminder(event)"
+        >
+
+            <label for="reminderTime">
+                Time
+            </label>
+
+            <input
+                type="time"
+                id="reminderTime"
+                required
+            >
+
+
+            <label for="reminderTitle">
+                What should SMRITI remind you about?
+            </label>
+
+            <input
+                type="text"
+                id="reminderTitle"
+                placeholder="Example: Take a short walk"
+                maxlength="60"
+                required
+            >
+
+
+            <label for="reminderType">
+                Reminder type
+            </label>
+
+            <select
+                id="reminderType"
+            >
+
+                <option value="health">
+                    ❤️ Health & Wellness
+                </option>
+
+                <option value="cognitive">
+                    🧠 Cognitive Activity
+                </option>
+
+                <option value="family">
+                    📞 Family & Friends
+                </option>
+
+                <option value="routine">
+                    🌸 Daily Routine
+                </option>
+
+                <option value="other">
+                    🔔 Other
+                </option>
+
+            </select>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    Save Reminder
+                </button>
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    onclick="hideAddReminder()"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- EMPTY STATE -->
+
+    <section
+        id="emptyState"
+        class="empty-state hidden"
+    >
+
+        <div>
+            🌷
+        </div>
+
+        <h2>
+            No reminders yet
+        </h2>
+
+        <p>
+            Add a reminder whenever you want
+            SMRITI to remember something for you.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+<script src="/reminders.js"></script>
+
+</body>
+
+</html>

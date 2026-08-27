@@ -1,0 +1,630 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f4f8f6;
+
+    color: #19342f;
+
+    min-height: 100vh;
+}
+
+
+.help-page {
+
+    width: min(950px, 100%);
+
+    margin: auto;
+
+    padding: 25px 25px 50px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.help-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+
+.brand {
+
+    font-size: 20px;
+
+    color: #19342f;
+}
+
+
+.back-button,
+.voice-button {
+
+    border: 1px solid #dce8e4;
+
+    background: white;
+
+    cursor: pointer;
+
+    border-radius: 14px;
+
+    transition: .2s;
+
+    box-shadow:
+        0 4px 15px rgba(30,70,60,.05);
+}
+
+
+.back-button {
+
+    padding: 11px 17px;
+
+    font-size: 15px;
+
+    color: #34544d;
+}
+
+
+.voice-button {
+
+    width: 46px;
+
+    height: 46px;
+
+    font-size: 20px;
+}
+
+
+.back-button:hover,
+.voice-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(30,70,60,.10);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 35px rgba(30,70,60,.06);
+
+    margin-bottom: 25px;
+}
+
+
+.hero-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 8px;
+}
+
+
+.hero-label {
+
+    color: #438274;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.hero h1 {
+
+    font-size: 38px;
+
+    margin: 9px 0;
+}
+
+
+.hero p {
+
+    color: #71827e;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HELP SECTION
+========================================= */
+
+.help-section {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 28px rgba(30,70,60,.05);
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading {
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+
+.section-heading p {
+
+    color: #7d8d89;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   HELP GRID
+========================================= */
+
+.help-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.help-card {
+
+    border: 1px solid #e1ebe7;
+
+    background: #f8fbf9;
+
+    border-radius: 19px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: .2s;
+}
+
+
+.help-card:hover {
+
+    transform: translateY(-3px);
+
+    background: white;
+
+    box-shadow:
+        0 9px 25px rgba(30,70,60,.08);
+
+    border-color: #cfe3db;
+}
+
+
+.help-card:active {
+
+    transform: scale(.98);
+}
+
+
+.help-card-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 16px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    flex-shrink: 0;
+}
+
+
+.help-card h3 {
+
+    font-size: 16px;
+
+    color: #29453f;
+
+    margin-bottom: 6px;
+
+    line-height: 1.4;
+}
+
+
+.help-card p {
+
+    color: #7a8c87;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   ANSWER CARD
+========================================= */
+
+.answer-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5ef,
+            #f1f8f5
+        );
+
+    border: 1px solid #d4eae1;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 28px rgba(30,70,60,.05);
+}
+
+
+.answer-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 17px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+    flex-shrink: 0;
+}
+
+
+.answer-content {
+
+    flex: 1;
+}
+
+
+.answer-content > span {
+
+    color: #438274;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.answer-content h2 {
+
+    font-size: 20px;
+
+    margin: 6px 0 8px;
+}
+
+
+.answer-content p {
+
+    color: #617671;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.primary-button {
+
+    border: none;
+
+    background: #286b5d;
+
+    color: white;
+
+    border-radius: 13px;
+
+    padding: 11px 17px;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+
+.primary-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #245f53;
+}
+
+
+/* =========================================
+   SUPPORT
+========================================= */
+
+.support-card {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    display: flex;
+
+    gap: 16px;
+
+    align-items: flex-start;
+
+    box-shadow:
+        0 8px 25px rgba(30,70,60,.05);
+
+    margin-bottom: 20px;
+}
+
+
+.support-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 15px;
+
+    background: #fff1ef;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+}
+
+
+.support-card h2 {
+
+    font-size: 19px;
+
+    margin-bottom: 6px;
+}
+
+
+.support-card p {
+
+    color: #71827e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.support-card button {
+
+    border: none;
+
+    background: #edf4f1;
+
+    color: #3f675d;
+
+    padding: 10px 13px;
+
+    border-radius: 11px;
+
+    margin-top: 12px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   HOME BUTTON
+========================================= */
+
+.home-button {
+
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+    background: #244f45;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+
+.home-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(30,70,60,.15);
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .help-page {
+
+        padding:
+            18px 15px 35px;
+    }
+
+
+    .hero {
+
+        padding:
+            30px 20px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 31px;
+    }
+
+
+    .help-section {
+
+        padding: 20px;
+    }
+
+
+    .help-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .help-card {
+
+        padding: 17px;
+    }
+
+
+    .answer-card {
+
+        padding: 20px;
+
+        gap: 13px;
+    }
+
+
+    .support-card {
+
+        padding: 20px;
+    }
+
+}

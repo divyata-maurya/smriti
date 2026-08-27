@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — Memory Garden</title>
+
+    <link rel="stylesheet" href="memory.css">
+
+</head>
+
+<body>
+
+<main class="game-page">
+
+    <!-- HEADER -->
+
+    <header class="game-header">
+
+        <button
+            class="back-button"
+            onclick="goBack()"
+        >
+            ← Back
+        </button>
+
+        <div class="game-brand">
+            🧠 <strong>SMRITI</strong>
+        </div>
+
+        <button
+            class="voice-button"
+            onclick="speakInstructions()"
+        >
+            🎙️
+        </button>
+
+    </header>
+
+
+    <!-- INTRO SCREEN -->
+
+    <section
+        class="intro"
+        id="introScreen"
+    >
+
+        <div class="garden-icon">
+            🌸
+        </div>
+
+        <span class="ai-badge">
+            ✨ Personalized by SMRITI AI
+        </span>
+
+        <h1>
+            Memory Garden
+        </h1>
+
+        <p>
+            Look carefully at the objects.
+            Remember where they are.
+            Then find their matching pairs.
+        </p>
+
+        <div class="game-info">
+
+            <div>
+                <strong id="cardCount">
+                    6
+                </strong>
+                <span>cards</span>
+            </div>
+
+            <div>
+                <strong id="pairCount">
+                    3
+                </strong>
+                <span>pairs</span>
+            </div>
+
+            <div>
+                <strong>~3 min</strong>
+                <span>activity</span>
+            </div>
+
+        </div>
+
+        <button
+            class="start-button"
+            onclick="startGame()"
+        >
+            Start Memory Garden →
+        </button>
+
+    </section>
+
+
+    <!-- GAME SCREEN -->
+
+    <section
+        class="game-screen hidden"
+        id="gameScreen"
+    >
+
+        <div class="game-top">
+
+            <div>
+
+                <span>
+                    Memory Garden
+                </span>
+
+                <h2>
+                    Find the matching pairs
+                </h2>
+
+            </div>
+
+
+            <div class="game-stats">
+
+                <div>
+
+                    <small>
+                        Time
+                    </small>
+
+                    <strong id="timer">
+                        00:00
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <small>
+                        Moves
+                    </small>
+
+                    <strong id="moves">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="instruction"
+            id="instruction"
+        >
+            Remember the cards...
+        </div>
+
+
+        <!-- CARDS WILL COME HERE -->
+
+        <div
+            class="memory-grid"
+            id="memoryGrid"
+        ></div>
+
+
+        <div class="game-help">
+
+            💡 Take your time.
+            There is no need to hurry.
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT SCREEN -->
+
+    <section
+        class="result-screen hidden"
+        id="resultScreen"
+    >
+
+        <div class="result-icon">
+            🌟
+        </div>
+
+        <span class="completed-label">
+            Activity completed
+        </span>
+
+        <h1>
+            Wonderful work!
+        </h1>
+
+        <p>
+            You completed today's Memory Garden activity.
+        </p>
+
+
+        <div class="score-card">
+
+            <div>
+
+                <strong id="finalScore">
+                    0
+                </strong>
+
+                <span>
+                    Memory Score
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="finalAccuracy">
+                    0%
+                </strong>
+
+                <span>
+                    Accuracy
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="finalTime">
+                    0s
+                </strong>
+
+                <span>
+                    Time
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-result">
+
+            <div class="ai-result-icon">
+                ✨
+            </div>
+
+            <div>
+
+                <span>
+                    SMRITI AI
+                </span>
+
+                <h3 id="aiMessage">
+                    Great work!
+                </h3>
+
+                <p id="aiRecommendation">
+                    SMRITI will personalize your next activity.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="continue-button"
+            onclick="goHome()"
+        >
+            Continue to My Day →
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- IMPORTANT: cache bust -->
+
+<script src="memory.js?v=3"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — My Day</title>
+
+    <link rel="stylesheet" href="/elder.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🧠
+            </div>
+
+            <div>
+                <h1>SMRITI</h1>
+                <p>Your cognitive companion</p>
+            </div>
+
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="icon-button"
+                onclick="speakDashboard()"
+                title="Voice assistance"
+                aria-label="Voice assistance"
+            >
+                🎙️
+            </button>
+
+            <button
+                type="button"
+                class="profile-button"
+                onclick="showProfile()"
+            >
+                <span>👵</span>
+                <strong>My Profile</strong>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         GREETING
+    ================================================== -->
+
+    <section class="greeting-section">
+
+        <div>
+
+            <p class="small-text">
+                Tuesday, August 26
+            </p>
+
+            <h2>
+                Good morning, <span>Amma</span> 🙏
+            </h2>
+
+            <p class="greeting-message">
+                Let's make today a wonderful day for your mind.
+            </p>
+
+        </div>
+
+        <div class="streak">
+
+            <div class="streak-icon">
+                🔥
+            </div>
+
+            <div>
+                <strong>5 day</strong>
+                <span>activity streak</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         TODAY'S ACTIVITIES
+    ================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h3>
+                    Today's activities
+                </h3>
+
+                <p>
+                    A gentle plan designed especially for you
+                </p>
+
+            </div>
+
+            <span
+                class="progress-text"
+                id="activityProgress"
+            >
+                0 / 3 completed
+            </span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="activityProgressFill"
+            ></div>
+
+        </div>
+
+
+        <div class="activity-grid">
+
+
+            <!-- =================================================
+                 MEMORY GARDEN
+            ================================================== -->
+
+            <button
+                type="button"
+                class="activity-card memory"
+                onclick="startMemoryGame()"
+            >
+
+                <div class="activity-top">
+
+                    <div class="activity-icon">
+                        🧩
+                    </div>
+
+                    <span class="recommended">
+                        AI Recommended
+                    </span>
+
+                </div>
+
+
+                <div class="activity-content">
+
+                    <h4>
+                        Memory Garden
+                    </h4>
+
+                    <p>
+                        Remember familiar objects
+                        and strengthen recall.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-footer">
+
+                    <span>
+                        ⏱ 5 min
+                    </span>
+
+                    <span id="memoryDifficulty">
+                        Easy
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <!-- =================================================
+                 FOCUS & FIND
+            ================================================== -->
+
+            <button
+                type="button"
+                class="activity-card attention"
+                onclick="startAttentionGame()"
+            >
+
+                <div class="activity-top">
+
+                    <div class="activity-icon">
+                        👀
+                    </div>
+
+                    <span class="activity-status">
+                        Next
+                    </span>
+
+                </div>
+
+
+                <div class="activity-content">
+
+                    <h4>
+                        Focus &amp; Find
+                    </h4>
+
+                    <p>
+                        A simple activity to exercise
+                        attention and focus.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-footer">
+
+                    <span>
+                        ⏱ 4 min
+                    </span>
+
+                    <span>
+                        Easy
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <!-- =================================================
+                 MY DAILY STORY
+            ================================================== -->
+
+            <button
+                type="button"
+                class="activity-card routine"
+                onclick="startRoutineGame()"
+            >
+
+                <div class="activity-top">
+
+                    <div class="activity-icon">
+                        🌸
+                    </div>
+
+                    <span class="activity-status">
+                        Later
+                    </span>
+
+                </div>
+
+
+                <div class="activity-content">
+
+                    <h4>
+                        My Daily Story
+                    </h4>
+
+                    <p>
+                        Arrange familiar daily activities
+                        in the right order.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-footer">
+
+                    <span>
+                        ⏱ 5 min
+                    </span>
+
+                    <span>
+                        Easy
+                    </span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SMRITI AI INSIGHT
+    ================================================== -->
+
+    <section class="ai-card">
+
+        <div class="ai-icon">
+            ✨
+        </div>
+
+        <div class="ai-content">
+
+            <span class="ai-label">
+                SMRITI AI
+            </span>
+
+            <h3>
+                A little suggestion for you
+            </h3>
+
+            <p id="aiRecommendationText">
+                SMRITI is analyzing your recent activity...
+            </p>
+
+            <button
+                type="button"
+                onclick="startMemoryGame()"
+            >
+                Start recommended activity →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         WELLBEING + REMINDERS
+    ================================================== -->
+
+    <section class="lower-grid">
+
+
+        <!-- ================= WELLBEING ================= -->
+
+        <div class="wellbeing-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h3>
+                        How are you feeling?
+                    </h3>
+
+                    <p>
+                        Your feelings matter to SMRITI.
+                    </p>
+
+                </div>
+
+                <span>
+                    ❤️
+                </span>
+
+            </div>
+
+
+            <div class="moods">
+
+                <button
+                    type="button"
+                    onclick="selectMood('Happy')"
+                >
+                    😊
+                    <span>Happy</span>
+                </button>
+
+                <button
+                    type="button"
+                    onclick="selectMood('Good')"
+                >
+                    🙂
+                    <span>Good</span>
+                </button>
+
+                <button
+                    type="button"
+                    onclick="selectMood('Okay')"
+                >
+                    😐
+                    <span>Okay</span>
+                </button>
+
+                <button
+                    type="button"
+                    onclick="selectMood('Sad')"
+                >
+                    😔
+                    <span>Sad</span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= REMINDERS ================= -->
+
+        <div class="reminder-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h3>
+                        Today's reminders
+                    </h3>
+
+                    <p>
+                        Things you don't want to forget.
+                    </p>
+
+                </div>
+
+                <span>
+                    🔔
+                </span>
+
+            </div>
+
+
+            <div class="reminder">
+
+                <span class="reminder-time">
+                    10:30
+                </span>
+
+                <div>
+
+                    <strong>
+                        Cognitive activity
+                    </strong>
+
+                    <small>
+                        Memory Garden
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="reminder">
+
+                <span class="reminder-time">
+                    01:00
+                </span>
+
+                <div>
+
+                    <strong>
+                        Family time
+                    </strong>
+
+                    <small>
+                        Call your daughter
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="reminder">
+
+                <span class="reminder-time">
+                    08:00
+                </span>
+
+                <div>
+
+                    <strong>
+                        Evening activity
+                    </strong>
+
+                    <small>
+                        Relax &amp; reflect
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BOTTOM NAVIGATION
+    ================================================== -->
+
+    <nav class="bottom-nav">
+
+        <button
+            type="button"
+            class="active"
+        >
+            🏠
+            <span>Home</span>
+        </button>
+
+
+        <button
+            type="button"
+            onclick="showProgress()"
+        >
+            📈
+            <span>My Progress</span>
+        </button>
+
+
+        <button
+            type="button"
+            onclick="showReminders()"
+        >
+            🔔
+            <span>Reminders</span>
+        </button>
+
+
+        <button
+            type="button"
+            onclick="showHelp()"
+        >
+            💬
+            <span>Help</span>
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- =================================================
+     IMPORTANT: ELDER JAVASCRIPT
+================================================== -->
+
+<script src="/elder.js?v=999"></script>
+
+</body>
+</html>

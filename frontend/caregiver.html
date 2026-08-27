@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — Caregiver Dashboard</title>
+
+    <link rel="stylesheet" href="caregiver.css">
+</head>
+
+<body>
+
+<main class="caregiver-app">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🧠
+            </div>
+
+            <div>
+                <h1>SMRITI</h1>
+                <p>Caregiver Intelligence Dashboard</p>
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <div class="system-status">
+                <span></span>
+                System Active
+            </div>
+
+            <button
+                class="profile"
+                onclick="showCaregiverProfile()"
+            >
+                👩‍⚕️
+                <strong>Caregiver</strong>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+
+    <section class="page-title">
+
+        <div>
+
+            <span class="eyebrow">
+                CAREGIVER VIEW
+            </span>
+
+            <h2>
+                Good morning 👋
+            </h2>
+
+            <p>
+                Here's how your loved one is doing today.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            onclick="generateReport()"
+            class="report-button"
+        >
+            Generate Report
+        </button>
+    </section>
+
+
+    <!-- PATIENT CARD -->
+
+    <section class="patient-card">
+
+        <div class="patient-info">
+
+            <div class="patient-avatar">
+                👵
+            </div>
+
+            <div>
+
+                <span class="patient-label">
+                    CURRENT PROFILE
+                </span>
+
+                <h3>
+                    Amma
+                </h3>
+
+                <p>
+                    Last active 8 minutes ago
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="patient-status">
+
+            <div class="status-dot"></div>
+
+            <div>
+                <strong>
+                    Active today
+                </strong>
+
+                <span>
+                    Cognitive session completed
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEY METRICS -->
+
+    <section class="metrics">
+
+        <div class="metric-card">
+
+            <div class="metric-icon green">
+                🧠
+            </div>
+
+            <div>
+
+                <span>
+                    Cognitive Score
+                </span>
+
+                <strong id="cognitiveScore">
+                    82
+                </strong>
+
+                <small class="positive">
+                    ↑ 8% this week
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <div class="metric-icon blue">
+                🎯
+            </div>
+
+            <div>
+
+                <span>
+                    Accuracy
+                </span>
+
+                <strong id="accuracy">
+                    87%
+                </strong>
+
+                <small class="positive">
+                    ↑ 5% this week
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <div class="metric-icon orange">
+                🔥
+            </div>
+
+            <div>
+
+                <span>
+                    Activity Streak
+                </span>
+
+                <strong>
+                    5 days
+                </strong>
+
+                <small>
+                    Best: 8 days
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <div class="metric-icon purple">
+                ❤️
+            </div>
+
+            <div>
+
+                <span>
+                    Today's Mood
+                </span>
+
+                <strong>
+                    😊 Good
+                </strong>
+
+                <small>
+                    Checked 10 min ago
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+
+    <section class="main-grid">
+
+
+        <!-- PERFORMANCE -->
+
+        <div class="panel performance-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h3>
+                        Cognitive Performance
+                    </h3>
+
+                    <p>
+                        Last 7 activity sessions
+                    </p>
+
+                </div>
+
+                <select id="period">
+
+                    <option>
+                        Last 7 days
+                    </option>
+
+                    <option>
+                        Last 30 days
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="chart">
+
+                <div class="y-axis">
+
+                    <span>100</span>
+                    <span>75</span>
+                    <span>50</span>
+                    <span>25</span>
+                    <span>0</span>
+
+                </div>
+
+
+                <div class="chart-area">
+
+                    <div class="grid-line line-1"></div>
+                    <div class="grid-line line-2"></div>
+                    <div class="grid-line line-3"></div>
+                    <div class="grid-line line-4"></div>
+
+
+                    <svg
+                        viewBox="0 0 700 260"
+                        preserveAspectRatio="none"
+                    >
+
+                        <polyline
+                            points="
+                            20,180
+                            125,155
+                            230,165
+                            335,125
+                            440,135
+                            545,100
+                            650,75
+                            "
+                        />
+
+                        <circle cx="20" cy="180" r="5"/>
+                        <circle cx="125" cy="155" r="5"/>
+                        <circle cx="230" cy="165" r="5"/>
+                        <circle cx="335" cy="125" r="5"/>
+                        <circle cx="440" cy="135" r="5"/>
+                        <circle cx="545" cy="100" r="5"/>
+                        <circle cx="650" cy="75" r="5"/>
+
+                    </svg>
+
+
+                    <div class="x-axis">
+
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Today</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI INSIGHT -->
+
+        <div class="panel ai-panel">
+
+            <div class="ai-heading">
+
+                <div class="ai-sparkle">
+                    ✨
+                </div>
+
+                <div>
+
+                    <span>
+                        SMRITI AI
+                    </span>
+
+                    <h3>
+                        Caregiver Insight
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="insight">
+
+                <div class="insight-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <strong>
+                        Memory performance improving
+                    </strong>
+
+                    <p>
+                        Amma's visual memory accuracy
+                        has improved by <b>12%</b> over
+                        the last 7 days.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="insight warning">
+
+                <div class="insight-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <strong>
+                        Gentle recommendation
+                    </strong>
+
+                    <p>
+                        Continue short daily sessions.
+                        SMRITI recommends maintaining
+                        the current difficulty level.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="view-insights"
+                onclick="viewAIInsights()"
+            >
+                View detailed AI insights →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADAPTIVE RECOMMENDATION -->
+
+    <div class="adaptive-recommendation">
+
+        <div class="adaptive-header">
+
+            <span>
+                🧠
+            </span>
+
+            <strong>
+                SMRITI Adaptive Recommendation
+            </strong>
+
+        </div>
+
+        <div class="adaptive-content">
+
+            Loading personalized recommendation...
+
+        </div>
+
+    </div>
+
+
+    <!-- LOWER SECTION -->
+
+    <section class="lower-grid">
+
+
+        <!-- ACTIVITY HISTORY -->
+
+        <div class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h3>
+                        Recent Activities
+                    </h3>
+
+                    <p>
+                        Latest cognitive sessions
+                    </p>
+
+                </div>
+
+                <button
+                    class="text-button"
+                    onclick="viewAllActivities()"
+                >
+                    View all
+                </button>
+
+            </div>
+
+
+            <div class="activity-list">
+
+
+                <div class="history-item">
+
+                    <div class="history-icon">
+                        🧩
+                    </div>
+
+                    <div class="history-info">
+
+                        <strong>
+                            Memory Garden
+                        </strong>
+
+                        <span>
+                            Today • 10:24 AM
+                        </span>
+
+                    </div>
+
+                    <div class="history-score">
+                        <strong>87%</strong>
+                        <span>Accuracy</span>
+                    </div>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon">
+                        👀
+                    </div>
+
+                    <div class="history-info">
+
+                        <strong>
+                            Focus & Find
+                        </strong>
+
+                        <span>
+                            Yesterday • 10:15 AM
+                        </span>
+
+                    </div>
+
+                    <div class="history-score">
+                        <strong>82%</strong>
+                        <span>Accuracy</span>
+                    </div>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon">
+                        🌸
+                    </div>
+
+                    <div class="history-info">
+
+                        <strong>
+                            My Daily Story
+                        </strong>
+
+                        <span>
+                            Monday • 10:32 AM
+                        </span>
+
+                    </div>
+
+                    <div class="history-score">
+                        <strong>78%</strong>
+                        <span>Accuracy</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALERTS -->
+
+        <div class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h3>
+                        Attention
+                    </h3>
+
+                    <p>
+                        Things worth noticing
+                    </p>
+
+                </div>
+
+                <span class="alert-count">
+                    2
+                </span>
+
+            </div>
+
+
+            <div class="alert-item">
+
+                <div class="alert-icon">
+                    🔔
+                </div>
+
+                <div>
+
+                    <strong>
+                        Reminder due
+                    </strong>
+
+                    <p>
+                        Family call scheduled
+                        for 1:00 PM.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="alert-item">
+
+                <div class="alert-icon">
+                    😊
+                </div>
+
+                <div>
+
+                    <strong>
+                        Mood check-in completed
+                    </strong>
+
+                    <p>
+                        Amma reported feeling
+                        "Good" today.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="manage-button"
+                onclick="manageAlerts()"
+            >
+                Manage alerts
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            SMRITI • Caregiver Intelligence
+        </span>
+
+        <span>
+            🔒 Data protected
+        </span>
+
+    </footer>
+
+</main>
+
+<!-- =========================================
+     CAREGIVER PROFILE MODAL
+========================================= --><div id="caregiverProfileModal" class="modal-overlay hidden"><div class="modal">
+
+    <div class="modal-header">
+
+        <div class="modal-title">
+
+            <div class="modal-title-icon">
+                👩‍⚕️
+            </div>
+
+            <div>
+                <h3>Caregiver Profile</h3>
+                <p>Caregiver account information</p>
+            </div>
+
+        </div>
+
+        <button
+            class="modal-close"
+            onclick="closeModal('caregiverProfileModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="profile-card">
+
+        <div class="profile-avatar">
+            👩‍⚕️
+        </div>
+
+        <div>
+            <strong>Caregiver</strong>
+            <span>SMRITI Caregiver Account</span>
+        </div>
+
+    </div>
+
+    <div class="modal-section">
+
+        <h4>Connected Patient</h4>
+
+        <p>
+            Amma
+        </p>
+
+    </div>
+
+    <div class="modal-section">
+
+        <h4>Patient ID</h4>
+
+        <p>
+            demo-patient-001
+        </p>
+
+    </div>
+
+    <div class="modal-section">
+
+        <h4>Access</h4>
+
+        <p>
+            You can view cognitive performance,
+            activity history, AI recommendations
+            and caregiver insights.
+        </p>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="modal-button secondary"
+            onclick="closeModal('caregiverProfileModal')"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+</div><!-- =========================================
+     REPORT MODAL
+========================================= --><div id="reportModal" class="modal-overlay hidden"><div class="modal">
+
+    <div class="modal-header">
+
+        <div class="modal-title">
+
+            <div class="modal-title-icon">
+                📄
+            </div>
+
+            <div>
+                <h3>Cognitive Report</h3>
+                <p>SMRITI patient performance summary</p>
+            </div>
+
+        </div>
+
+        <button
+            class="modal-close"
+            onclick="closeModal('reportModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div id="reportContent">
+
+        <div class="report-stat-grid">
+
+            <div class="report-stat">
+                <span>Total Sessions</span>
+                <strong id="reportSessions">—</strong>
+            </div>
+
+            <div class="report-stat">
+                <span>Average Score</span>
+                <strong id="reportScore">—</strong>
+            </div>
+
+            <div class="report-stat">
+                <span>Average Accuracy</span>
+                <strong id="reportAccuracy">—</strong>
+            </div>
+
+            <div class="report-stat">
+                <span>Best Score</span>
+                <strong id="reportBestScore">—</strong>
+            </div>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h4>AI Recommendation</h4>
+
+            <p id="reportRecommendation">
+                Loading recommendation...
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="modal-button secondary"
+            onclick="closeModal('reportModal')"
+        >
+            Close
+        </button>
+
+        <button
+            class="modal-button"
+            onclick="printReport()"
+        >
+            🖨 Print Report
+        </button>
+
+    </div>
+
+</div>
+
+</div><!-- =========================================
+     AI INSIGHTS MODAL
+========================================= --><div id="aiInsightsModal" class="modal-overlay hidden"><div class="modal">
+
+    <div class="modal-header">
+
+        <div class="modal-title">
+
+            <div class="modal-title-icon">
+                ✨
+            </div>
+
+            <div>
+                <h3>Detailed AI Insights</h3>
+                <p>SMRITI cognitive observations</p>
+            </div>
+
+        </div>
+
+        <button
+            class="modal-close"
+            onclick="closeModal('aiInsightsModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div id="detailedInsights">
+
+        <div class="insight-detail">
+
+            <strong>🧠 Cognitive Performance</strong>
+
+            <p id="detailPerformance">
+                Analyzing recent performance...
+            </p>
+
+        </div>
+
+        <div class="insight-detail">
+
+            <strong>📈 Performance Trend</strong>
+
+            <p id="detailTrend">
+                Analyzing performance trend...
+            </p>
+
+        </div>
+
+        <div class="insight-detail">
+
+            <strong>🌱 Recommendation</strong>
+
+            <p id="detailRecommendation">
+                Analyzing recommended activity...
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="modal-button"
+            onclick="closeModal('aiInsightsModal')"
+        >
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+</div><!-- =========================================
+     ALERT MANAGEMENT MODAL
+========================================= --><div id="alertsModal" class="modal-overlay hidden"><div class="modal">
+
+    <div class="modal-header">
+
+        <div class="modal-title">
+
+            <div class="modal-title-icon">
+                🔔
+            </div>
+
+            <div>
+                <h3>Manage Alerts</h3>
+                <p>Configure caregiver notifications</p>
+            </div>
+
+        </div>
+
+        <button
+            class="modal-close"
+            onclick="closeModal('alertsModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div>
+
+        <div class="alert-setting">
+
+            <div>
+                <strong>Missed activity</strong>
+                <span>Notify when a session is missed</span>
+            </div>
+
+            <button
+                class="alert-toggle active"
+                onclick="toggleAlert(this)"
+            ></button>
+
+        </div>
+
+        <div class="alert-setting">
+
+            <div>
+                <strong>Mood changes</strong>
+                <span>Notify about unusual mood changes</span>
+            </div>
+
+            <button
+                class="alert-toggle active"
+                onclick="toggleAlert(this)"
+            ></button>
+
+        </div>
+
+        <div class="alert-setting">
+
+            <div>
+                <strong>Performance changes</strong>
+                <span>Notify when performance changes significantly</span>
+            </div>
+
+            <button
+                class="alert-toggle active"
+                onclick="toggleAlert(this)"
+            ></button>
+
+        </div>
+
+        <div class="alert-setting">
+
+            <div>
+                <strong>Family reminders</strong>
+                <span>Show scheduled family reminders</span>
+            </div>
+
+            <button
+                class="alert-toggle active"
+                onclick="toggleAlert(this)"
+            ></button>
+
+        </div>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="modal-button"
+            onclick="closeModal('alertsModal')"
+        >
+            Save Settings
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="caregiver.js"></script>
+
+</body>
+
+</html>

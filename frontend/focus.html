@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMRITI — Focus & Find</title>
+
+    <link rel="stylesheet" href="/focus.css">
+</head>
+
+<body>
+
+<div class="game-container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="game-header">
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="goBack()"
+        >
+            ← Back
+        </button>
+
+        <div class="game-title">
+
+            <div class="game-icon">
+                👀
+            </div>
+
+            <div>
+                <h1>Focus &amp; Find</h1>
+                <p>Exercise your attention</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section
+        id="introScreen"
+        class="screen"
+    >
+
+        <div class="intro-card">
+
+            <div class="big-icon">
+                👀
+            </div>
+
+            <h2>
+                Focus &amp; Find
+            </h2>
+
+            <p>
+                Look carefully and find the
+                special object among the others.
+            </p>
+
+            <div class="instructions">
+
+                <div>
+                    <span>👀</span>
+                    <p>Look carefully</p>
+                </div>
+
+                <div>
+                    <span>☝️</span>
+                    <p>Tap the different object</p>
+                </div>
+
+                <div>
+                    <span>🌸</span>
+                    <p>Take your time</p>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                onclick="startGame()"
+            >
+                Start Activity →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GAME ================= -->
+
+    <section
+        id="gameScreen"
+        class="screen hidden"
+    >
+
+        <div class="game-info">
+
+            <div class="stat">
+                <span>Round</span>
+                <strong id="round">1</strong>
+            </div>
+
+            <div class="stat">
+                <span>Score</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>Time</span>
+                <strong id="timer">00:00</strong>
+            </div>
+
+        </div>
+
+
+        <div class="instruction-box">
+
+            <span>🔎</span>
+
+            <p id="instruction">
+                Find the object that is different.
+            </p>
+
+        </div>
+
+
+        <div
+            id="focusGrid"
+            class="focus-grid"
+        ></div>
+
+
+        <p
+            id="message"
+            class="game-message"
+        >
+            Take your time. 🌸
+        </p>
+
+    </section>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <section
+        id="resultScreen"
+        class="screen hidden"
+    >
+
+        <div class="result-card">
+
+            <div class="result-icon">
+                🌟
+            </div>
+
+            <h2>
+                Wonderful work!
+            </h2>
+
+            <p>
+                You completed your Focus &amp; Find activity.
+            </p>
+
+
+            <div class="result-stats">
+
+                <div>
+                    <span>Score</span>
+                    <strong id="finalScore">
+                        0
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Accuracy</span>
+                    <strong id="finalAccuracy">
+                        0%
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Time</span>
+                    <strong id="finalTime">
+                        0s
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- AI RESPONSE -->
+
+            <div class="ai-result">
+
+                <span>
+                    ✨ SMRITI AI
+                </span>
+
+                <p id="aiMessage">
+                    SMRITI is preparing your feedback...
+                </p>
+
+                <small id="aiRecommendation">
+                    Your next activity will be personalized.
+                </small>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    onclick="startGame()"
+                >
+                    Play Again
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    onclick="goHome()"
+                >
+                    Back to Home
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="/focus.js"></script>
+
+</body>
+
+</html>
